@@ -1,0 +1,22 @@
+<div class="flex space-x-4">
+  <div class="w-1/2">
+    @if (items$ | async; as items) {
+      <app-item-list
+        [items]="items"
+        [selectedItem]="selectedItem"
+        (selected)="selectItem($event)"
+        (deleted)="deleteItem($event)"
+      ></app-item-list>
+    } @else {
+      <p class="text-amber-600">No items found</p>
+    }
+  </div>
+
+  <div class="w-1/2">
+    <app-item-detail
+      [item]="selectedItem"
+      (saveItem)="saveItem($event)"
+      (cancel)="resetItemForm()"
+    ></app-item-detail>
+  </div>
+</div>

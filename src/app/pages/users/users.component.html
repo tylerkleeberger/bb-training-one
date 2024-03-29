@@ -1,0 +1,11 @@
+<div class="flex">
+  <app-users-list
+    class="flex-1"
+    [users]="(users$ | async) || []"
+    (selectedUser)="userSelected($event)"
+  ></app-users-list>
+  <app-user-details
+    class="flex-1"
+    [user]="selectedUser"
+  ></app-user-details>
+</div>

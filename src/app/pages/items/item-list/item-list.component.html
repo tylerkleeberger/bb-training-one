@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <ul>
+      @for (item of items; track item.id) {
+        <li
+          class="bg-white shadow-md rounded-lg p-4 mb-4 cursor-pointer hover:shadow-lg transform hover:scale-105 transition-all duration-1000 ease-in-out flex justify-between"
+          [ngClass]="{ selected: item === selectedItem }"
+          (click)="selected.emit(item)"
+        >
+          <div>
+          <h2 class="text-xl mb-2">{{ item.name }}</h2>
+          <p class="text-gray-600">{{ item.description }}</p>
+          <p class="text-gray-400">Quantity: {{ item.quantity }}</p>
+          </div>
+          <button class="h-10 w-auto bg-red-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-700 hover:border hover:border-black hover:text-white" (click)="removeItem(item.id, $event)">
+            Remove Item
+          </button>
+        </li>
+      }
+    </ul>
+  </div>
+</div>
