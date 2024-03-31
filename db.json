@@ -26,5 +26,12 @@
     }
   ],
   "users": [
+    {
+      "id": "zv0mef60y",
+      "firstName": "Tyler",
+      "lastName": "Kleeberger",
+      "email": "t@email.com",
+      "dateOfBirth": "1990-10-10"
+    }
   ]
 }
